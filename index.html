@@ -13,6 +13,18 @@
     />
   </head>
   <body>
+    <div class="themeSelector">
+      <input type="radio" name="theme" id="dark" onchange="darkTheme()" />
+      <label for="dark">Dark</label>
+      <input
+        type="radio"
+        name="theme"
+        id="light"
+        onchange="lightTheme()"
+        checked
+      />
+      <label for="light">Light</label>
+    </div>
     <div class="relogio">
       <div class="ponteiro horas"></div>
       <div class="ponteiro minutos"></div>

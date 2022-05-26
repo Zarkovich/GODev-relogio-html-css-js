@@ -3,15 +3,7 @@ const P_HORAS = document.querySelector(".horas");
 const P_MINUTOS = document.querySelector(".minutos");
 const P_SEGUNDOS = document.querySelector(".segundos");
 const R_DIGITAL = document.querySelector(".digital");
-
-// Muda o Background de Acordo com as horas
-const changeBackgroud = (horas) => {
-  if (horas >= 0 && horas < 6) {
-    BODY.style.backgroundImage = "url('assets/img/nigth.jpg')";
-  } else if (horas >= 6 && horas < 12) {
-    BODY.style.backgroundImage = "url('assets/img/manha.jpg')";
-  } else BODY.style.backgroundImage = "url('assets/img/tarde.jpg')";
-};
+const RELOGIO = document.querySelector(".relogio");
 
 // Responsavel pelo Relogio digital
 const rDigital = (horas, minutos, segundos) => {
@@ -40,14 +32,32 @@ const setTime = () => {
   const minutos = data.getMinutes();
   const segundos = data.getSeconds();
 
-  changeBackgroud(horas);
-
   pPosition(P_HORAS, (horas + minutos / 60) / 12);
   pPosition(P_MINUTOS, (minutos + segundos / 60) / 60);
   pPosition(P_SEGUNDOS, segundos / 60);
 
-  rDigital(horas.toPrecision(1), minutos, segundos);
+  rDigital(horas, minutos, segundos);
 };
 
 // Fica chamando a função em intervalos de 1s
 setInterval(setTime, 1000);
+
+document.getElementById("dark").innerHTML;
+
+function darkTheme() {
+  RELOGIO.style.backgroundColor = "#232323";
+  RELOGIO.style.color = "#ffffff";
+  P_HORAS.style.backgroundColor = "#fff";
+  P_MINUTOS.style.backgroundColor = "#fff";
+  P_HORAS.style.boxShadow = "2px 2px 4px rgba(0,0,0,0.473) inset";
+  P_MINUTOS.style.boxShadow = "2px 2px 4px rgba(0,0,0,0.473) inset";
+}
+
+function lightTheme() {
+  RELOGIO.style.backgroundColor = "#ffffff";
+  RELOGIO.style.color = "#000000";
+  P_HORAS.style.backgroundColor = "#000";
+  P_MINUTOS.style.backgroundColor = "#000";
+  P_HORAS.style.boxShadow = "2px 2px 4px rgba(255,255,255,0.473) inset";
+  P_MINUTOS.style.boxShadow = "2px 2px 4px rgba(255,255,255,0.473) inset";
+}
