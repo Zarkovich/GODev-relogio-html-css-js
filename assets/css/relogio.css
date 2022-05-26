@@ -110,3 +110,17 @@ body {
   width: 140px;
   text-align: center;
 }
+
+/* Tela de celular */
+@media (max-width: 360px) {
+  .relogio {
+    height: 300px;
+    width: 300px;
+    font-size: 0.9rem;
+  }
+
+  .digital {
+    font-size: 0.9rem;
+    width: 80px;
+  }
+}
