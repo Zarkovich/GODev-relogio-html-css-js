@@ -112,7 +112,7 @@ body {
 }
 
 /* Tela de celular */
-@media (max-width: 360px) {
+@media (max-width: 900px) {
   .relogio {
     height: 300px;
     width: 300px;
