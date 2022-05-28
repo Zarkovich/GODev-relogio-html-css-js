@@ -4,6 +4,7 @@ const P_MINUTOS = document.querySelector(".minutos");
 const P_SEGUNDOS = document.querySelector(".segundos");
 const R_DIGITAL = document.querySelector(".digital");
 const RELOGIO = document.querySelector(".relogio");
+const ZONE = document.querySelector("[selector]");
 
 // Responsavel pelo Relogio digital
 const rDigital = (horas, minutos, segundos) => {
@@ -28,9 +29,23 @@ const pPosition = (elemento, pos) => {
 // faz chama as outras funções
 const setTime = () => {
   const data = new Date();
+  switch (ZONE.value) {
+    case "Brazil":
+      break;
+    case "Londres":
+      data.setUTCHours(7);
+      console.log(data.getHours());
+      break;
+    case "Japão":
+      data.setUTCHours(15);
+      console.log(data.getHours());
+      break;
+  }
   const horas = data.getHours();
   const minutos = data.getMinutes();
   const segundos = data.getSeconds();
+
+  // Set time zone
 
   pPosition(P_HORAS, (horas + minutos / 60) / 12);
   pPosition(P_MINUTOS, (minutos + segundos / 60) / 60);

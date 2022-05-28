@@ -1,2 +1,17 @@
 @import url(ponteiros.css);
 @import url(relogio.css);
+
+/* Time Zone */
+
+.selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selector > select#zone {
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  width: 50%;
+  margin-top: 5px;
+}
